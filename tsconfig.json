@@ -1,10 +1,10 @@
 {
-  "exclude": ["node_modules", "dist", "coverage"],
+  "exclude": ["node_modules", "dist", "coverage", "test", "*.spec.ts"],
   "compilerOptions": {
     "lib": ["es2021", "dom"],
     "outDir": "dist",
     "noEmit": false,
-    "emitDeclarationOnly": true,
+    "emitDeclarationOnly": false,
     "module": "commonjs",
     "target": "es2021",
     "strict": true,
