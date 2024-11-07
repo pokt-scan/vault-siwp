@@ -1,11 +1,11 @@
 {
   "name": "@poktscan/vault-siwp",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Sign-In With Pocket",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
-  "author": "Soothe Inc.",
-  "license": "NONE",
+  "author": "Poktscan",
+  "license": "Apache-2.0",
   "private": true,
   "scripts": {
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist && rm -f tsconfig.tsbuildinfo",
