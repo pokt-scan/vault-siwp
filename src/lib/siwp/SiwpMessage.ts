@@ -2,7 +2,8 @@ import {isValidPocketAddress, ParsedMessage} from "../parser";
 import {generateNonce, getAddressFromPublicKey, isValidISO8601Date} from "./utils";
 import {SiwpError, SiwpErrorType, SiwpResponse, VerifyOpts, VerifyParams} from "./types";
 import * as uri from 'valid-url';
-import {verifyAsync, etc} from '@noble/ed25519';
+import * as etc from '@noble/curves/abstract/utils';
+import { ed25519 } from '@noble/curves/ed25519';
 
 export class SiwpMessage {
     /**RFC 3986 URI scheme for the authority that is requesting the signing. */
@@ -378,7 +379,7 @@ export class SiwpMessage {
         let isValid = false;
 
         try {
-            isValid = await verifyAsync(etc.hexToBytes(signature), new TextEncoder().encode(message), etc.hexToBytes(publicKey));
+            isValid = ed25519.verify(etc.hexToBytes(signature), new TextEncoder().encode(message), etc.hexToBytes(publicKey));
         } catch (e) {
             const message =
                 e instanceof Error ? e.message : 'Error during signature verification. Please check the signature.';
