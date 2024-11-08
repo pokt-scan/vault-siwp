@@ -14,7 +14,7 @@
     "lint:fix": "yarn lint --fix",
     "build": "tsc",
     "test": "vitest",
-    "prepare": "pnpm build"
+    "prepare": "yarn build"
   },
   "dependencies": {
     "@noble/curves": "^1.6.0",
@@ -22,6 +22,7 @@
     "hex-lite": "^1.5.0",
     "valid-url": "1.0.9"
   },
+  "packageManager": "yarn@1.22.17",
   "devDependencies": {
     "@peculiar/webcrypto": "^1.5.0",
     "@types/node": "^22.4.1",
