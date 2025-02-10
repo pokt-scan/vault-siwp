@@ -1,5 +1,7 @@
 // @ts-ignore
-import { apgApi, apgLib } from "apg-js";
+import apgLib from "apg-js/src/apg-lib/node-exports";
+// @ts-ignore
+import apgApi from "apg-js/src/apg-api/api";
 import { isValidPocketAddress } from "./utils";
 
 const GRAMMAR = `
